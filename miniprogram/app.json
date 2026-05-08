@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/zcritical_hit/zcritical_hit",
+    "pages/zcut_trees/zcut_trees",
+    "pages/zchain_dig/zchain_dig",
+    "pages/zdynamic_light/zdynamic_light",
+    "pages/zsecret_realm/zsecret_realm",
+    "pages/zcraftsmanship/zcraftsmanship",
+    "pages/zbase_build/zbase_build",
+    "pages/zmore_enchantment/zmore_enchantment"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "tagNameStyleIsolation": "legacy",
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "resolveAlias": {
+    "@/*": "/*"
+  }
+}

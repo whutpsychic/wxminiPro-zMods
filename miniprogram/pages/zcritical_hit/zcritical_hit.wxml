@@ -1,0 +1,16 @@
+<!--pages/zcritical_hit/zcritical_hit.wxml-->
+<navigation-bar title="暴 击" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
+<scroll-view type="list" scroll-y>
+  <view class="category-title">【主旨】</view>
+  <view class="info-line"> - 提升玩家的打击快感</view>
+  <view class="info-line"> - 提升攻击能力</view>
+
+  <view class="category-title">【设计】</view>
+  <view class="info-line"> - 当玩家近身攻击时，有一定几率产生暴击，从而产生额外4点伤害</view>
+  <view class="info-line"> - 如果是原版的跳劈暴击则将伤害由原版的1.5倍伤害调整为2倍伤害</view>
+  <view class="info-line"> - 发生暴击的机率跟玩家当前经验等级有关</view>
+  <view class="info-line"> - 基础暴击几率为10%，每当玩家身上有1级时可使暴击几率增加1%。也就是说，当玩家等级大于等于90级时，则可以100%触发暴击。</view>
+
+  <view class="tips">然而我不相信有谁会攒着90级不用就为了叠100%暴击几率。</view>
+</scroll-view>

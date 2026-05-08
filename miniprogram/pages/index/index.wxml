@@ -1,0 +1,25 @@
+<!--pages/main/main.wxml-->
+<navigation-bar title="独角兽工作室" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+
+<scroll-view type="list" scroll-y>
+  <!-- -------------------- -->
+  <view class="group-name">中大型模组</view>
+  <view class="mod-item" wx:for="{{modMenu.largeMods}}" wx:key="id" bindtap="onClickItem" data-item="{{item}}">
+    <text>{{item.name}}</text>
+    <text wx:if="{{item.price == 0}}" class="price-text">免费</text>
+    <view wx:else class="price-can">
+      <image class="price-icon" src="/assets/textures/item/diamond.png"></image>
+      <text class="price-text">{{item.price}}</text>
+    </view>
+  </view>
+  <!-- -------------------- -->
+  <view class="group-name">小型模组</view>
+  <view class="mod-item" wx:for="{{modMenu.smallMods}}" wx:key="id" bindtap="onClickItem" data-item="{{item}}">
+    <text>{{item.name}}</text>
+    <text wx:if="{{item.price == 0}}" class="price-text">免费</text>
+    <view wx:else class="price-can">
+      <image class="price-icon" src="/assets/textures/item/diamond.png"></image>
+      <text class="price-text">{{item.price}}</text>
+    </view>
+  </view>
+</scroll-view>

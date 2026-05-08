@@ -1,0 +1,4 @@
+<!--pages/zdynamic_light/zdynamic_light.wxml-->
+<navigation-bar title="动态光源" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
+<text>敬请期待</text>
