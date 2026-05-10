@@ -1,11 +1,13 @@
 // pages/zdynamic_light/zdynamic_light.ts
+import zdynamic_lightData from '@/data/zdynamic_light'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageData: zdynamic_lightData
   },
 
   /**

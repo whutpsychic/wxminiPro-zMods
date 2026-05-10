@@ -3,80 +3,39 @@
 
 <scroll-view type="list" scroll-y>
   <view class="category-title">【主旨】</view>
-  <view class="info-line"> - 节省玩家砍树花费的时间</view>
+  <view class="info-line" wx:for="{{pageData.mainIdea}}" wx:key="index">
+    - {{item}}
+  </view>
 
   <view class="category-title">【设计】</view>
-  <view class="info-line title"> - 触发条件与时机</view>
-  <view class="info-sub-line">
-    1.当玩家手持斧头，并且处于潜行状态时(默认为按住shift键)
-  </view>
-  <view class="info-sub-line">
-    2.当玩家破坏的当前方块是一个原木方块
-  </view>
-  <view class="info-sub-line">
-    3.当玩家破坏的原木方块所处的结构被判定为一棵树/一株大型蘑菇/下界菌类
-  </view>
-
-  <view class="info-line title"> - 发动砍树效果后的计算过程</view>
-  <view class="info-sub-line">
-    1.以第一格你破坏掉的方块为基准，检测其周围3x3x3范围内的所有合法树干方块（该种树原木/蘑菇柄/下界菌柄）并记录
-  </view>
-  <view class="info-sub-line">
-    2.根据树干点位计算其周围半径为 R 的正方体范围内所有的该树木对应的树叶方块（该种树树叶方块/对应的蘑菇方块/下届疣块）并记录
-  </view>
-  <view class="info-sub-line">
-    3.保留根部点位
-  </view>
-  <view class="info-sub-line">
-    4.剔除掉叶子方块点位中3x3x3范围内有同种类原木且该原木不在 allLogs 记录当中的叶子点位（保留并视为邻近的另一棵树的一部分）
-  </view>
-  <view class="info-sub-line">
-    5.将记录得到的方块一次全部挖掘掉
-  </view>
+  <block wx:for="{{pageData.design}}" wx:key="index">
+    <view class="info-line title"> - {{item.title}}</view>
+    <view wx:for="{{item.desc}}" wx:key="index" wx:for-item="descItem" class="info-sub-line">
+      {{index+1}}.{{descItem}}
+    </view>
+  </block>
 
   <view class="category-title">【FAQ】</view>
-  <view class="info-line title"> - 什么时候程序会认为你砍的是一棵树/一株大型蘑菇/下界菌类</view>
-  <view class="info-sub-line content">
-    以你破坏的这格方块为基准，向下检测最多4格，如果除此类原木方块之外找到泥土或泥土亚种（草方块/泥土/砂土/灰化土/缠根泥土/菌丝），下届岩或其亚种（下届岩/绯红菌岩/诡异菌岩），则认为这是一棵树/一株大型蘑菇/下界菌类。
-  </view>
-
-  <view class="info-line title"> - 什么是有效方块</view>
-  <view class="info-sub-line">就是指所有检测到的</view>
-  <view class="info-sub-line">
-    1.与你第一个破坏掉的原木方块相同类型的，连续的原木方块
-  </view>
-  <view class="info-sub-line">
-    2.与你破坏掉的原木方块对应的叶子方块，且周边3x3x3范围内不能有同种类的未记录在册的
-  </view>
-  <view class="info-sub-line">原木方块</view>
-
-  <view class="info-line title"> - 什么是连续的原木方块</view>
-  <view class="info-sub-line">3x3x3范围内能接连的就算是连续的</view>
-
-  <view class="info-line title"> - 半径 R</view>
-  <view class="info-sub-line">1.默认值为 4</view>
-  <view class="info-sub-line">2.当砍伐的是丛林木时值为 6</view>
-
-  <view class="info-line title"> - 什么是“根部”</view>
-  <view class="info-sub-line content">
-    就是指所有记录在册的树干（原木/蘑菇柄/菌柄）点位中Y轴坐标小于你破坏的基准方块Y轴坐标值的所有方块
-  </view>
+  <block wx:for="{{pageData.faq}}" wx:key="index">
+    <view class="info-line title"> - {{item.a}}</view>
+    <view wx:for="{{item.ana}}" wx:key="index" wx:for-item="anItem" class="info-sub-line">
+      {{index+1}}.{{anItem}}
+    </view>
+    <view class="info-sub-line content">
+      {{item.an}}
+    </view>
+  </block>
 
   <view class="category-title">【其他】</view>
-  <view class="info-line">
-    - 你可以对所有原版树木、大型蘑菇、下界菌类、以及所有符合 minecraft 命名规范的其他模组内的树木进行一键砍树
-  </view>
-  <view class="info-line">
-    - 在砍伐下界菌类时可以顺带将藏匿于其中的菌光体方块一起砍下来
-  </view>
-  <view class="info-line">
-    - 对菌类的砍伐有效方块判定方法稍有不同，你现在可以砍得比以前更齐整
-  </view>
-  <view class="info-line">
-    - 创造模式砍伐不会掉落任何物品
-  </view>
-  <view class="info-line">
-    - 使用了全新算法，引入了“这棵树”的概念，比以前砍的更齐整、更舒适
+  <view wx:for="{{pageData.others}}" wx:key="index" class="info-line">
+    - {{item}}
   </view>
 
+  <view class="category-title">【更新记录】</view>
+  <view wx:for="{{pageData.updates}}" wx:key="index" class="info-line">
+    <view class="update-spliter"> ---------- {{item.date}} ---------- </view>
+    <view wx:for="{{item.content}}" wx:key="{{index}}" wx:for-item="citem" class="update-line">
+      - {{citem}}
+    </view>
+  </view>
 </scroll-view>

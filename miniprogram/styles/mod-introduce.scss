@@ -9,7 +9,7 @@
 .category-title {
   font-size: 16px;
   font-weight: bold;
-  margin: 2em 1em;
+  margin: 2em 1em 1em 1em;
 }
 
 .info-line {
@@ -17,6 +17,10 @@
   line-height: 1.5em;
   margin: 10px;
   margin-left: 2em;
+}
+
+.info-line.title {
+  margin-top: 2em;
 }
 
 .info-sub-line {
@@ -32,4 +36,12 @@
   color: #233;
   margin: 2em;
   text-indent: 2em;
+}
+
+.update-spliter {
+  margin: 20px 0;
+}
+
+.update-line {
+  line-height: 1.8em;
 }

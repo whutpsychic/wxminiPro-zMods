@@ -1,4 +1,18 @@
 <!--pages/zchain_dig/zchain_dig.wxml-->
 <navigation-bar title="连锁挖掘" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 
-<text>敬请期待</text>
+<scroll-view type="list" scroll-y>
+  <view class="category-title">【主旨】</view>
+  <view class="info-line" wx:for="{{pageData.mainIdea}}" wx:key="index"> - {{item}}</view>
+
+  <view class="category-title">【设计】</view>
+  <view class="info-line" wx:for="{{pageData.design}}" wx:key="index"> - {{item.title}}</view>
+
+  <view class="category-title">【更新记录】</view>
+  <view wx:for="{{pageData.updates}}" wx:key="index" class="info-line">
+    <view class="update-spliter"> ---------- {{item.date}} ---------- </view>
+    <view wx:for="{{item.content}}" wx:key="{{index}}" wx:for-item="citem" class="update-line">
+      - {{citem}}
+    </view>
+  </view>
+</scroll-view>

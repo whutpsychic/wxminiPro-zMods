@@ -1,11 +1,13 @@
 // pages/zcritical_hit/zcritical_hit.ts
+import zcritical_hitData from '@/data/zcritical_hit'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageData: zcritical_hitData
   },
 
   /**

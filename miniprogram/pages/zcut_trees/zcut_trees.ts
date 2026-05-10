@@ -1,11 +1,13 @@
 // pages/zcut_trees/zcut_trees.ts
+import zcut_treesData from '@/data/zcut_trees'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageData: zcut_treesData
   },
 
   /**

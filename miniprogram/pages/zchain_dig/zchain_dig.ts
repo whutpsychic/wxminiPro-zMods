@@ -1,11 +1,13 @@
 // pages/zchain_dig/zchain_dig.ts
+import zchain_digData from '@/data/zchain_dig'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageData: zchain_digData
   },
 
   /**
